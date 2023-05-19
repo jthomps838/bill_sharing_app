@@ -58,3 +58,6 @@ class House:
             return self.bills.get(bill_name)
         except:
             return f'{bill_name} does not exist for this property.'
+
+    def get_paying_residents(self):
+        return [person for person in self.roommates if person.is_paying]

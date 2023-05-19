@@ -7,8 +7,8 @@ from classes.home import House
 home = House(address='123 Happy Road', city='Atlanta', zipcode='30075')
 
 # TEST RESIDENTS
-joseph = Resident(name='Joseph', home=home)
-kim = Resident(name="Kimberly", home=home, roommates=[joseph])
+joseph = Resident(name='Joseph', home=home, is_paying=True)
+kim = Resident(name="Kimberly", home=home, is_paying=True, roommates=[joseph])
 parker = Resident(name='Parker', home=home)
 
 print([roommate.name for roommate in home.get_roommates()])
@@ -22,3 +22,5 @@ electric = Bill(bill={'total_amount': 121.09, 'taxes': 21.09,
 may_rent = PdfReport(filename='may_rent_2023')
 
 print(home.get_bills())
+
+print(joseph.get_pay_amount(rent, 1))
